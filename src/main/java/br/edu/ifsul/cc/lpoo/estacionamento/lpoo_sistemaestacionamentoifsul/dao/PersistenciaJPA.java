@@ -35,11 +35,28 @@ public class PersistenciaJPA implements InterfaceBD{
 
     @Override
     public void persist(Object o) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        try {
+            entity = getEntityManager();
+            entity.getTransaction().begin();
+            entity.persist(o);
+            entity.getTransaction().commit();
+        } catch (Exception e) {
+            if (entity.getTransaction().isActive()) {
+                entity.getTransaction().rollback();
+            }
+        }
     }
 
     @Override
     public void remover(Object o) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
+    public EntityManager getEntityManager() {
+        if(entity == null || !entity.isOpen()) {
+            entity = factory.createEntityManager();
+        }
+        return entity;
+    }
+    
 }
