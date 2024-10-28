@@ -6,6 +6,10 @@
 import br.edu.ifsul.cc.lpoo.estacionamento.lpoo_sistemaestacionamentoifsul.dao.PersistenciaJPA;
 import model.Marca;
 import model.Modelo;
+import model.Pessoa;
+import model.TipoVeiculo;
+import model.Veiculo;
+import model.VinculoPessoa;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -40,15 +44,23 @@ public class TestePersistencia {
     @Test
     public void testePersistencia() {
         Modelo m = new Modelo();
-        m.setDescricao("fox");
-        m.setMarca(Marca.VOLKSWAGEN);
-        Modelo m2 = new Modelo();
-        m2.setDescricao("uno com escada em cima");
-        m2.setMarca(Marca.FIAT);
+        m.setDescricao("Uno de firma com escada em cima");
+        m.setMarca(Marca.FIAT);
+        Veiculo v = new Veiculo();
+        v.setModelo(m);
+        v.setPlaca("AAA1234");
+        v.setCor("BRANCO");
+        v.setTipoVeiculo(TipoVeiculo.CARRO);
         
+        Pessoa p = new Pessoa();
+        p.setNome("Robson");
+        p.setEmail("robson@gmail.com");
+        p.setFone("190");
+        p.setVinculoPessoa(VinculoPessoa.VISITANTE);
         try{
             jpa.persist(m);
-            jpa.persist(m2);
+            jpa.persist(v);
+            jpa.persist(p);
         } catch(Exception e) {
             System.err.println("Erro ao persistir modelo: "+m);
         }

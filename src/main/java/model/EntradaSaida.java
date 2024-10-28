@@ -4,11 +4,25 @@
  */
 package model;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class EntradaSaida {
+
+@Entity
+@Table(name = "tb_entrada_saida")
+public class EntradaSaida implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
     private Date data;
+    @Enumerated(EnumType.STRING)
     private TipoMovimentacao tipoMovimentacao; 
     
     private final Veiculo veiculo;  

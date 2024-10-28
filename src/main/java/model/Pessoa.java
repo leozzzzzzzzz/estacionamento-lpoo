@@ -4,16 +4,29 @@
  */
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class Pessoa {
+@Entity
+@Table(name = "tb_pessoa")
+public class Pessoa implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
     private String nome;
     private String fone;
     private String email;
+    @Enumerated(EnumType.STRING)
     private VinculoPessoa vinculoPessoa;
     
-    private ArrayList<Veiculo> listaVeiculos;
+    //private ArrayList<Veiculo> listaVeiculos;
 
     public int getId() {
         return id;

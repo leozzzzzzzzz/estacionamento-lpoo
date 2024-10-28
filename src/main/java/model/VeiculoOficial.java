@@ -4,6 +4,11 @@
  */
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_veiculo_oficial")
 public class VeiculoOficial extends Veiculo {
     private String renavan;
     private String chassi;

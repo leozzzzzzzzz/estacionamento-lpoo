@@ -4,29 +4,46 @@
  */
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
-public class Veiculo {
+@Entity
+@Table(name = "tb_veiculo")
+public class Veiculo implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private int id;
     private String placa;
     private String cor;
-    private int id;
+    @Enumerated(EnumType.STRING)
     private TipoVeiculo tipoVeiculo; 
     
     //Relações:
-    List<EntradaSaida> listaMovimentacoes;
+//    List<EntradaSaida> listaMovimentacoes;
+    @ManyToOne
     private Modelo modelo;
-    private Pessoa proprietario;
+    
+//    private Pessoa proprietario;
     //
     
     public Veiculo() {
-        listaMovimentacoes = new ArrayList<>();
+//        listaMovimentacoes = new ArrayList<>();
     }
 
     public Veiculo(String placa, TipoVeiculo tipoVeiculo) {
         this.placa = placa;
         this.tipoVeiculo = tipoVeiculo;
-        listaMovimentacoes = new ArrayList<>();
+//        listaMovimentacoes = new ArrayList<>();
     }
     
     
@@ -71,17 +88,17 @@ public class Veiculo {
         this.tipoVeiculo = tipoVeiculo;
     }
     
-    public void addMovimentacao(EntradaSaida movimentacao){
-        listaMovimentacoes.add(movimentacao);
-    }
+//    public void addMovimentacao(EntradaSaida movimentacao){
+//        listaMovimentacoes.add(movimentacao);
+//    }
 
-    public Pessoa getProprietario() {
-        return proprietario;
-    }
+//    public Pessoa getProprietario() {
+//        return proprietario;
+//    }
 
-    public void setProprietario(Pessoa proprietario) {
-        this.proprietario = proprietario;
-    }
-    
+//    public void setProprietario(Pessoa proprietario) {
+//        this.proprietario = proprietario;
+//    }
+//    
     
 }
