@@ -6,12 +6,14 @@ package model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,7 +28,8 @@ public class Pessoa implements Serializable{
     @Enumerated(EnumType.STRING)
     private VinculoPessoa vinculoPessoa;
     
-    //private ArrayList<Veiculo> listaVeiculos;
+//    @OneToMany(mappedBy = "proprietario", cascade = CascadeType.ALL)
+//    private ArrayList<Veiculo> listaVeiculos;
 
     public int getId() {
         return id;
@@ -68,5 +71,7 @@ public class Pessoa implements Serializable{
         this.vinculoPessoa = vinculoPessoa;
     }
     
-    
+    public void addVeiculo(Veiculo veiculo) {
+//        listaVeiculos.add(veiculo);
+    }
 }

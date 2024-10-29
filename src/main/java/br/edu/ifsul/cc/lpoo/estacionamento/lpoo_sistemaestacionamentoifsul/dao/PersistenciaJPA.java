@@ -38,6 +38,7 @@ public class PersistenciaJPA implements InterfaceBD{
         try {
             entity = getEntityManager();
             entity.getTransaction().begin();
+            entity.remove(o);
             entity.persist(o);
             entity.getTransaction().commit();
         } catch (Exception e) {

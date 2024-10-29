@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
- */
-
 import br.edu.ifsul.cc.lpoo.estacionamento.lpoo_sistemaestacionamentoifsul.dao.PersistenciaJPA;
+import model.EntradaSaida;
 import model.Marca;
 import model.Modelo;
 import model.Pessoa;
+import model.TipoMovimentacao;
 import model.TipoVeiculo;
 import model.Veiculo;
 import model.VinculoPessoa;
@@ -15,10 +12,6 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author 20231PF.CC0030
- */
 public class TestePersistencia {
     
     PersistenciaJPA jpa = new PersistenciaJPA();
@@ -57,10 +50,14 @@ public class TestePersistencia {
         p.setEmail("robson@gmail.com");
         p.setFone("190");
         p.setVinculoPessoa(VinculoPessoa.VISITANTE);
+        v.setProprietario(p);
+        
+        EntradaSaida es = new EntradaSaida(TipoMovimentacao.SAIDA, v);
         try{
             jpa.persist(m);
             jpa.persist(v);
             jpa.persist(p);
+            jpa.persist(es);
         } catch(Exception e) {
             System.err.println("Erro ao persistir modelo: "+m);
         }
