@@ -4,9 +4,13 @@
  */
 package br.edu.ifsul.cc.lpoo.estacionamento.lpoo_sistemaestacionamentoifsul.dao;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+import model.Pessoa;
 
 public class PersistenciaJPA implements InterfaceBD{
     public EntityManager entity;
@@ -60,4 +64,16 @@ public class PersistenciaJPA implements InterfaceBD{
         return entity;
     }
     
+    //funções para listar dados
+    
+    public List<Pessoa> getPessoas(){
+        entity = getEntityManager();
+        try {
+            TypedQuery<Pessoa> query = entity.createQuery("select p from Pessoa p", Pessoa.class);
+            return query.getResultList();
+        } catch (Exception e) {
+            System.err.println("Erro ao buscar pessoas: " + e);
+            return null;
+        }
+    }
 }
