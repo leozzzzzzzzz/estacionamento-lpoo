@@ -11,6 +11,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import model.Pessoa;
+import model.VinculoPessoa;
 
 public class PersistenciaJPA implements InterfaceBD{
     public EntityManager entity;
@@ -74,6 +75,22 @@ public class PersistenciaJPA implements InterfaceBD{
         } catch (Exception e) {
             System.err.println("Erro ao buscar pessoas: " + e);
             return null;
+        }
+    }
+    
+    public List<Pessoa> getPessoasPorNomeEVinculo(String nome, VinculoPessoa vinculo) {
+        EntityManager em = getEntityManager();
+        if (vinculo!=null){
+            String query = "SELECT p FROM Pessoa p WHERE p.nome LIKE :nome AND p.vinculoPessoa = :vinculo";
+            return em.createQuery(query, Pessoa.class)
+                    .setParameter("nome", "%" + nome + "%")
+                    .setParameter("vinculo", vinculo)
+                    .getResultList();
+        } else{
+            String query = "SELECT p FROM Pessoa p WHERE p.nome LIKE :nome";
+            return em.createQuery(query, Pessoa.class)
+                    .setParameter("nome", "%" + nome + "%")
+                    .getResultList();
         }
     }
 }

@@ -6,6 +6,7 @@ package model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -73,5 +74,10 @@ public class Pessoa implements Serializable{
     
     public void addVeiculo(Veiculo veiculo) {
        listaVeiculos.add(veiculo);
+    }
+    
+    @Override
+    public String toString() {
+        return nome +" ("+vinculoPessoa+")";
     }
 }
