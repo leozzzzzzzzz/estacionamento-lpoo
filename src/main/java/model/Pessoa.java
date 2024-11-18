@@ -28,8 +28,8 @@ public class Pessoa implements Serializable{
     @Enumerated(EnumType.STRING)
     private VinculoPessoa vinculoPessoa;
     
-//    @OneToMany(mappedBy = "proprietario", cascade = CascadeType.ALL)
-//    private ArrayList<Veiculo> listaVeiculos;
+   @OneToMany(mappedBy = "proprietario", cascade = CascadeType.ALL)
+   private List<Veiculo> listaVeiculos;
 
     public int getId() {
         return id;
