@@ -72,6 +72,6 @@ public class Pessoa implements Serializable{
     }
     
     public void addVeiculo(Veiculo veiculo) {
-//        listaVeiculos.add(veiculo);
+       listaVeiculos.add(veiculo);
     }
 }
