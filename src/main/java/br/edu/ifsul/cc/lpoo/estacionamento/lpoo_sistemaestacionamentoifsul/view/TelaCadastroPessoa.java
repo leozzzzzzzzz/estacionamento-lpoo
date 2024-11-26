@@ -52,7 +52,7 @@ public class TelaCadastroPessoa extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblCadastroPessoa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblCadastroPessoa.setText("Cadastro de Pessoa:");
+        lblCadastroPessoa.setText("Cadastro de pessoa:");
 
         lblNome.setText("Nome: ");
 
@@ -87,10 +87,9 @@ public class TelaCadastroPessoa extends javax.swing.JDialog {
                     .addComponent(lblNome)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(38, 38, 38)
-                            .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                            .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(btnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lblEmail)
@@ -102,7 +101,7 @@ public class TelaCadastroPessoa extends javax.swing.JDialog {
                                 .addComponent(txtFone)
                                 .addComponent(txtEmail)
                                 .addComponent(jcbVinculoPessoa, 0, 300, Short.MAX_VALUE)))))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
