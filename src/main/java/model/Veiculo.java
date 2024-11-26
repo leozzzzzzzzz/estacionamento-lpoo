@@ -3,6 +3,7 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
@@ -16,13 +17,12 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_veiculo")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "veiculo", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorColumn(name = "dtype", discriminatorType = DiscriminatorType.STRING)
 public class Veiculo implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -40,7 +40,7 @@ public class Veiculo implements Serializable {
     @JoinColumn(name = "modelo_id")
     private Modelo modelo;
     
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "veiculo_proprietario")
     private Pessoa proprietario;
     
@@ -109,5 +109,11 @@ public class Veiculo implements Serializable {
         this.proprietario = proprietario;
     }
     
-    
+    @Override
+    public String toString(){
+        
+        return "Placa: " + placa
+            + ", Proprietário: " + (proprietario != null ? proprietario.getNome() : "Desconhecido") 
+            + ", Oficial: " + ((this instanceof VeiculoOficial) ? "Sim" : "Não");
+    }
 }

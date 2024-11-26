@@ -6,9 +6,7 @@ package br.edu.ifsul.cc.lpoo.estacionamento.lpoo_sistemaestacionamentoifsul.view
 
 
 import br.edu.ifsul.cc.lpoo.estacionamento.lpoo_sistemaestacionamentoifsul.dao.PersistenciaJPA;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import model.Pessoa;
@@ -58,7 +56,7 @@ public class TelaPessoa extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabel1.setText("Pessoas Cadastradas");
+        jLabel1.setText("Pessoas cadastradas");
 
         jLabel2.setText("Nome: ");
 

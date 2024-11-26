@@ -4,11 +4,12 @@
  */
 package model;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_veiculo_oficial")
+@DiscriminatorValue("OFICIAL")
 public class VeiculoOficial extends Veiculo {
     private String renavan;
     private String chassi;
