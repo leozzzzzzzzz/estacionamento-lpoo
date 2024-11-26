@@ -16,15 +16,30 @@ public class MainJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCadastro = new javax.swing.JMenu();
         miPessoa = new javax.swing.JMenuItem();
         miVeiculo = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        menuMovimentacoes = new javax.swing.JMenu();
         miEntradaVeiculo = new javax.swing.JMenuItem();
         miSaidaVeiculo = new javax.swing.JMenuItem();
         menuAjuda = new javax.swing.JMenu();
         miSobre = new javax.swing.JMenuItem();
+
+        jMenu3.setText("File");
+        jMenuBar2.add(jMenu3);
+
+        jMenu4.setText("Edit");
+        jMenuBar2.add(jMenu4);
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -38,7 +53,7 @@ public class MainJFrame extends javax.swing.JFrame {
         });
         menuCadastro.add(miPessoa);
 
-        miVeiculo.setText("Veiculo");
+        miVeiculo.setText("Veículo");
         miVeiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 miVeiculoActionPerformed(evt);
@@ -48,20 +63,15 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(menuCadastro);
 
-        jMenu2.setText("Movimentacoes");
+        menuMovimentacoes.setText("Movimentações");
 
         miEntradaVeiculo.setText("Entrada");
-        miEntradaVeiculo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miEntradaVeiculoActionPerformed(evt);
-            }
-        });
-        jMenu2.add(miEntradaVeiculo);
+        menuMovimentacoes.add(miEntradaVeiculo);
 
-        miSaidaVeiculo.setText("Saida");
-        jMenu2.add(miSaidaVeiculo);
+        miSaidaVeiculo.setText("Saída");
+        menuMovimentacoes.add(miSaidaVeiculo);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(menuMovimentacoes);
 
         menuAjuda.setText("Ajuda");
 
@@ -81,11 +91,11 @@ public class MainJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 930, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGap(0, 671, Short.MAX_VALUE)
         );
 
         pack();
@@ -146,10 +156,15 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenu menuAjuda;
     private javax.swing.JMenu menuCadastro;
+    private javax.swing.JMenu menuMovimentacoes;
     private javax.swing.JMenuItem miEntradaVeiculo;
     private javax.swing.JMenuItem miPessoa;
     private javax.swing.JMenuItem miSaidaVeiculo;

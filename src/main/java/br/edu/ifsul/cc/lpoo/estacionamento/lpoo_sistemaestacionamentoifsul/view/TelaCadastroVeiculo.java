@@ -271,16 +271,21 @@ public class TelaCadastroVeiculo extends javax.swing.JDialog {
         veiculo.setProprietario((Pessoa) cmbProprietario.getSelectedItem());
         veiculo.setModelo((Modelo) cmbModelo.getSelectedItem());
         
-        //        Se for um veículo oficial
+        // se for oficial
+        
         if (cbVeiculoOficial.isSelected()) {
             VeiculoOficial veiculoOficial = (VeiculoOficial) veiculo;
             veiculoOficial.setChassi(txtChassi.getText());
             veiculoOficial.setRenavan(txtRenavan.getText());
+            
+            
     }
-        
+        System.out.println("Veículo:" + veiculo);
         jpa.conexaoAberta();
         try {
+            
             jpa.persist(veiculo);
+            
         } catch (Exception e) {
             Logger.getLogger(TelaVeiculo.class.getName()).log(Level.SEVERE, null, e);
             System.out.println("Erro: "+veiculo+" \n Erro: "+e);
@@ -359,6 +364,8 @@ public class TelaCadastroVeiculo extends javax.swing.JDialog {
         });
     }
 
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionarModelo;
     private javax.swing.JButton btnCancelar;

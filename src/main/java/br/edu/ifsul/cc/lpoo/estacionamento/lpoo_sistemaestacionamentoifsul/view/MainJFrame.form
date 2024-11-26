@@ -49,6 +49,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ve&#xed;culo"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miVeiculoActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -110,12 +113,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="897" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="930" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="597" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="671" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>

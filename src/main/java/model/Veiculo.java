@@ -22,7 +22,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_veiculo")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "dtype", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorColumn(name = "tipo_veiculo", discriminatorType = DiscriminatorType.STRING)
 public class Veiculo implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
